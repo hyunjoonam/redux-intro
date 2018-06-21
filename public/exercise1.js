@@ -1,6 +1,13 @@
 // EXERCISE 1
 // This counter isn't working! The counter always says 0 even when you press 'increment'
 // This is because the reducer isn't implemented 
+/* <h1> Exercise 1 </h1>
+<div class="counter1">
+	<span id="counter1-text"></span>
+	<button id="counter1-button">Increment</button>
+</div>
+
+<hr /> */
 
 let reducer1 = (state = 0, action) => {
 	// Write code here that will:
@@ -8,7 +15,11 @@ let reducer1 = (state = 0, action) => {
 	// 2) return state + 1 if it's and "INCREMENT"
 	// 3) otherwise just return state
 	// (HINT - look at the other exercises to see what might go here)
-	return state;
+	if (action.type == "INCREMENT") {
+		return state + 1;
+	} else {
+		return state;
+	}
 }
 
 let store1 = Redux.createStore(reducer1);
